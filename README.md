@@ -1,8 +1,11 @@
-Jogo da Forca em Python
-🎉 Bem-vindo ao Desafio da Forca! 🎉
+# Jogo da Forca em Python
+
+ 
+<h2>🎉 Bem-vindo ao Desafio da Forca! 🎉
 Você está prestes a entrar em um emocionante jogo de adivinhação de palavras! Este repositório contém um jogo da Forca implementado em Python, onde você pode testar suas habilidades de dedução e vocabulário. Prepare-se para se divertir e desafiar seus amigos!
 
-🚀 O que é?
+
+<h3>🚀 O que é?
 O jogo da Forca é um clássico entre os jogos de adivinhação. O objetivo é descobrir uma palavra secreta, letra por letra, antes de "enforcar" o personagem. Cada erro leva você um passo mais perto da derrota, então escolha suas letras com sabedoria!
 
 🛠️ Como funciona?
