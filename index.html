@@ -3,9 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogo com python avançado</title>
+    <title>Jogo da Forca - Python Avançado</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #4CAF50;
+        }
+
+        #forca {
+            font-size: 20px;
+            margin: 20px 0;
+        }
+
+        #letras-acertadas {
+              font-size: 24px;
+            letter-spacing: 2px;
+            margin: 20px 0;
+        }
+
+        #input-area {
+            margin: 20px 0;
+        }
+
+        #chute {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #mensagem {
+            font-size: 20px;
+            margin: 20px 0;
+            color: #FF5722;
+        }
+    </style>
 </head>
 <body>
-    <><h1>PROGAMA FORCA:PYTHON AVANÇADO</h1>
+    <h1>Jogo da Forca: Python Avançado</h1>
+    <div id="forca"></div>
+    <div id="letras-acertadas"></div>
+    <div id="input-area">
+        <input type="text" id="chute" maxlength="1" placeholder="Digite uma letra" />
+        <button onclick="enviarChute()">Chutar</button>
+    </div>
+    <div id="mensagem"></div>
+
+    <script>
+        // Aqui você pode adicionar a lógica do jogo em JavaScript
+        let palavraSecreta = "EXEMPLO"; // Use uma palavra real do seu arquivo de palavras
+        let letrasAcertadas = Array(palavraSecreta.length).fill("_");
+        let erros = 0;
+        const maxErros = 7;
+
+        function atualizarDisplay() {
+            document.getElementById('letras-acertadas').innerHTML = letrasAcertadas.join(" ");
+            document.getElementById('forca').innerHTML = desenharForca(erros);
+        }
+
+        function desenharForca(erros) {
+            const estagios = [
+                `  _______     \n |/      |    \n |            \n |            \n |            \n |            `,
+                `  _______     \n |/      |    \n |      (_)   \n |            \n |            \n |            `,
+                `  _______     \n |/      |    \n |      (_)   \n |      \\     \n |            \n |            `,
+                `  _______     \n |/      |    \n |      (_)   \n |      \\|    \n |            \n |            `,
+                `  _______     \n |/      |    \n |      (_)   \n |      \\|/   \n |            \n |            `,
+                `  _______     \n |/      |    \n |      (_)   \n |      \\|/   \n |       |    \n |            `,
+                `  _______     \n |/      |    \n |      (_)   \n |      \\|/   \n |       |    \n |      /     `,
+                `  _______     \n |/      |    \n |      (_)   \n |      \\|/   \n |       |    \n |      / \\   `
+            ];
+            return estagios[erros];
+        }
+
+        function enviarChute() {
+            const chute = document.getElementById('chute').value.toUpperCase();
+            document.getElementById('chute').value = '';
+
+            if (palavraSecreta.includes(chute)) {
+                for (let i = 0; i < palavraSecreta.length; i++) {
+                    if (palavraSecreta[i] === chute) {
+                        letrasAcertadas[i] = chute;
+                    }
+                }
+            } else {
+                erros++;
+            }
+
+            atualizarDisplay();
+
+            if (letrasAcertadas.join("") === palavraSecreta) {
+                document.getElementById('mensagem').innerHTML = "Parabéns, você ganhou!";
+            } else if (erros === maxErros) {
+                document.getElementById('mensagem').innerHTML = `Você foi enforcado! A palavra era: ${palavraSecreta}`;
+            }
+        }
+
+        // Inicialização
+        atualizarDisplay();
+    </script>
 </body>
 </html>
+Explicação do Códig
