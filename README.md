@@ -1,67 +1,45 @@
-# Jogo da Forca
+# 🎯 Jogo da Forca em Python
 
-Bem-vindo ao Jogo da Forca! Este é um jogo divertido e interativo onde você tenta adivinhar uma palavra secreta letra por letra. O jogo é feito em Python e utiliza um arquivo de texto para carregar as palavras.
+Este é um jogo clássico da **forca**, desenvolvido em Python para fins educacionais e de diversão. O jogador deve adivinhar uma palavra secreta, letra por letra, antes que o boneco seja "enforcado".
 
-## Funcionalidades
+## 🧠 Como Funciona
 
-- Jogar a Forca com palavras aleatórias.
-- Você pode inserir letras e terá um limite de tentativas.
-- Mensagens de vitória e derrota são exibidas no final do jogo.
+- O programa sorteia uma palavra aleatória do arquivo `palavras.txt`.
+- O jogador tenta adivinhar a palavra letra por letra.
+- A cada erro, uma parte do boneco é desenhada.
+- O jogo termina com vitória ao completar a palavra, ou derrota após 7 erros.
 
-## Requisitos
+## 📁 Estrutura dos Arquivos
 
-- Python 3.x
-- Um arquivo de texto chamado `palavras.txt` que contém as palavras que serão utilizadas no jogo. Cada palavra deve estar em uma linha separada.
+```text
+.
+├── forca.py          # Código principal do jogo
+├── palavras.txt      # Lista de palavras usadas no jogo
+└── README.md         # Este arquivo
 
-## Como Usar
+## ▶️ Como Jogar
 
-1. **Clone o repositório:**
+1. Clone o repositório ou copie os arquivos para sua máquina.
+2. Certifique-se de ter o Python instalado (versão 3.6 ou superior).
+3. No terminal, execute:
 
-   ```bash
-   git clone https://github.com/seuusuario/seurepositorio.git
-   cd seurepositorio
-
-Crie o arquivo palavras.txt:
-
-Crie um arquivo chamado palavras.txt na mesma pasta onde está o script forca.py. Adicione as palavras que você deseja usar no jogo, uma por linha.
-
-Exemplo de conteúdo do palavras.txt:
-
-python
-programacao
-forca
-jogo
-
-Execute o jogo:
-
-Execute o script Python:
-
- 
+```bash
 python forca.py
-Jogue:
+## 🏆 Resultado
 
-Siga as instruções na tela. Você será solicitado a adivinhar letras até que ganhe, perca ou esgote suas tentativas.
+- **Vitória:** A palavra é completada sem 7 erros.
+- **Derrota:** O boneco da forca é desenhado completo.
 
-Estrutura do Código
-O código é organizado em funções principais:
+## 📌 Exemplo de Execução
 
-imprime_mensagem_abertura(): Exibe uma mensagem de boas-vindas.
-
-carrega_palavra_secreta(): Carrega uma palavra aleatória do arquivo palavras.txt.
-
-pede_chute(): Solicita ao jogador que forneça uma letra.
-
-marca_chute_correto(): Atualiza a lista de letras acertadas se o chute estiver correto.
-
-desenha_forca(): Exibe o desenho da forca baseado no número de erros.
-
-jogar(): Função principal que controla o fluxo do jogo.
-
-Contribuindo
-
-Se você deseja contribuir para este projeto, fique à vontade para fazer um fork do repositório e enviar um pull request.
-
-Licença
+*****************************************
+****** Bem-vindo ao jogo da Forca *******
+*****************************************
+['_', '_', '_', '_', '_']
+Qual letra? a
+['_', 'A', '_', '_', 'A']
+...
+Parabéns, você ganhou!
 
 
 
